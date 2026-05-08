@@ -1,3 +1,6 @@
 anthropic
 streamlit
 python-dotenv
+langgraph 
+langchain-anthropic 
+langchain-core
