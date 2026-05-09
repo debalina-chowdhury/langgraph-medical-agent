@@ -39,4 +39,6 @@ jobs:
         flake8 . --count --max-line-length=127 --exit-zero --statistics
 
     - name: Run tests
+    env:
+        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       run: pytest test_agent.py -v
