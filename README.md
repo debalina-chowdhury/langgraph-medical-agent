@@ -1,3 +1,4 @@
+[![CI](https://github.com/debalina-chowdhury/langgraph-medical-agent/actions/workflows/python-app.yml/badge.svg)](https://github.com/debalina-chowdhury/langgraph-medical-agent/actions)
 # LangGraph Medical Scheduling Agent
 
 A production-grade medical scheduling AI agent built with LangGraph StateGraph, Anthropic Claude, and Streamlit. Uses a state machine architecture with conditional edge routing to handle complex multi-step scheduling workflows.

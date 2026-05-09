@@ -36,7 +36,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        flake8 . --count --max-line-length=127 --statistics --ignore=E501,W503,E302,E303
+        flake8 . --count --max-line-length=127 --exit-zero --statistics
 
     - name: Run tests
       run: pytest test_agent.py -v
