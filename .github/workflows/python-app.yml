@@ -1,0 +1,42 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        run: |
+        pip install --timeout 120 \
+          anthropic \
+          langchain-anthropic \
+          langchain-core \
+          langgraph \
+          streamlit \
+          python-dotenv \
+          pytest \
+          flake8
+
+    - name: Lint with flake8
+      run: |
+        flake8 . --count --max-line-length=127 --statistics --ignore=E501,W503,E302,E303
+
+    - name: Run tests
+      run: pytest test_agent.py -v
